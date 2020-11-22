@@ -9,6 +9,10 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Displays the amount to free shipping as a WooCommerce Notice
 
+== Description ==
+
+Find the settings in WooCommerce -> Settings -> Shipping
+
 
 == Changelog ==
 
