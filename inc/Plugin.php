@@ -4,9 +4,7 @@ Class Plugin{
 	public function __construct()
 	{
 		new Settings;
-		if(Settings::is_enabled()){
-			new Notice;
-		}
+		new Notice;
 
 	}
 }

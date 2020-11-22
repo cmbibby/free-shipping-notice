@@ -7,8 +7,14 @@ class Notice
 	public function __construct()
 	{
 		// Hook into where we want the notices to be displayed
-		add_action('woocommerce_before_checkout_form', array($this, 'maybe_display_amount'), 1);
-		add_action('woocommerce_before_cart', array($this, 'maybe_display_amount'), 1);
+		if(Settings::display_in_cart()){
+			add_action('woocommerce_before_cart', array($this, 'maybe_display_amount'), 1);
+		}
+		if(Settings::display_in_checkout()){
+			add_action('woocommerce_before_checkout_form', array($this, 'maybe_display_amount'), 1);
+		}
+
+
 	}
 
 	public function maybe_display_amount()
