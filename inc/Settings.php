@@ -79,7 +79,7 @@ class Settings {
 				),
 				'section_end' => array(
 					'type' => 'sectionend',
-					'id'   => 'wc_lead_times_end',
+					'id'   => 'wc_free_shipping',
 				),
 			);
 			return $custom_settings;
