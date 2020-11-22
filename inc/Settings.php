@@ -1,0 +1,93 @@
+<?php
+namespace Free_Shipping_Notice;
+
+class Settings {
+
+	/**
+	 * Hook into the settings tabs
+	 */
+	public function __construct() {
+		 add_filter( 'woocommerce_get_sections_shipping', array( $this, 'free_shipping_add_settings_tab' ) );
+		 add_filter( 'woocommerce_get_settings_shipping', array( $this, 'free_shipping_settings' ), 10, 2 );
+	}
+
+	/**
+	 * Add a tab for the plugin in the shipping tab
+	 *
+	 * @param object $settings_tab
+	 *
+	 * @return object
+	 */
+	public function free_shipping_add_settings_tab( $settings_tab ) {
+		$settings_tab['shipping_free_shipping'] = __( 'Free Shipping Notice', 'free-shipping-notice' );
+		return $settings_tab;
+	}
+
+	/**
+	 * Add the settings field
+	 *
+	 * @param array $settings
+	 * @param array $current_section
+	 *
+	 * @return array
+	 */
+	public function free_shipping_settings( $settings, $current_section ) {
+		if ( 'shipping_free_shipping' == $current_section ) {
+			$custom_settings = array(
+				array(
+					'name' => __( 'Shipping Lead Times', 'free-shipping-notice' ),
+					'type' => 'title',
+					'desc' => __( 'Display the amount remaining for free shipping', 'free-shipping-notice' ),
+					'id'   => 'wc_free_shipping',
+					'css'  => 'min-width:200px;',
+				),
+				array(
+					'title'   => __( 'Enable', 'free-shipping-notice' ),
+					'desc'    => __( 'Enable free shipping notices', 'free-shipping-notice' ),
+					'id'      => 'wc_free_shipping_enable',
+					'default' => 'no',
+					'type'    => 'checkbox',
+					'css'     => 'min-width:200px;',
+				),
+				array(
+					'title'    => __( 'Free Shipping Amount', 'free-shipping-notice' ),
+					'type'     => 'number',
+					'desc_tip' => __( 'The Free shipping amount', 'free-shipping-notice' ),
+					'default'  => 0,
+					'id'       => 'wc_free_shipping_amount',
+					'css'      => 'height:100px;',
+					'css'      => 'width:100px;',
+				),
+				array(
+					'title'    => __( 'Message', 'free-shipping-notice' ),
+					'type'     => 'textarea',
+					'desc_tip' => __( 'The text you would like displayed in the notice. Use {amount} and {amount_remaining} as variable placeholders', 'free-shipping-notice' ),
+					'default'  => __( 'Hey! We have free shipping for orders over {amount} spend another {amount_remaining} to get free shipping', 'free-shipping-notice' ),
+					'id'       => 'wc_free_shipping_message',
+					'css'      => 'height:200px;',
+					'css'      => 'min-width:200px;',
+				),
+				'section_end' => array(
+					'type' => 'sectionend',
+					'id'   => 'wc_lead_times_end',
+				),
+			);
+			return $custom_settings;
+		} else {
+			return $settings;
+		}
+
+
+	}
+	public static function get_freeship_amount(){
+		return get_option('wc_free_shipping_amount');
+	}
+
+	public static function get_message(){
+		return get_option('wc_free_shipping_message');
+	}
+
+	public static function is_enabled(){
+		return get_option('wc_free_shipping_enable');
+	}
+}

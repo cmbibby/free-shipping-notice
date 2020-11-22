@@ -1,0 +1,16 @@
+{
+    "name": "cmbibby/free-shipping-notice",
+    "type": "wordpress-plugin",
+    "authors": [
+        {
+            "name": "Chris Bibby",
+            "email": "cmbibby@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload" : {
+      "psr-4" : {
+        "Free_Shipping_Notice\\" : "inc/"
+      }
+    }
+}
