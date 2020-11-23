@@ -38,4 +38,11 @@ class Loader {
 	}
 }
 
-new Loader;
+add_action(
+	'plugins_loaded',
+	function() {
+	new Loader;
+}
+	);
+
+
