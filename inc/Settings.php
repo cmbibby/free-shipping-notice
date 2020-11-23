@@ -62,6 +62,14 @@ class Settings {
 					'css'      => 'min-width:200px;',
 				),
 				array(
+					'title'   => __( 'Include Tax', 'free-shipping-notice' ),
+					'desc'    => __( 'Include Tax in calculation', 'free-shipping-notice' ),
+					'id'      => 'wc_free_shipping_tax',
+					'default' => 'yes',
+					'type'    => 'checkbox',
+					'css'     => 'min-width:200px;',
+				),
+				array(
 					'title'   => __( 'Display on Cart', 'free-shipping-notice' ),
 					'desc'    => __( 'Display on Cart Page', 'free-shipping-notice' ),
 					'id'      => 'wc_free_shipping_cart',
@@ -108,6 +116,14 @@ class Settings {
 			return true;
 		} else {
 		return false;
+		}
+	}
+
+	public static function include_tax() {
+		if ( 'yes' == get_option( 'wc_free_shipping_tax' ) ) {
+			return true;
+		} else {
+			return false;
 		}
 	}
 }
