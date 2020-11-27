@@ -8,7 +8,7 @@
  * Text Domain:     free-shipping-notice
  * Domain Path:     /languages
  * Version:         1.0.0
- * GitHub Plugin URI: git@github.com:cmbibby/free-shipping-notice.git
+ * GitHub Plugin URI: cmbibby/free-shipping-notice
  * WC requires at least: 3.5.0
  * WC tested up to: 4.7.0
  *
