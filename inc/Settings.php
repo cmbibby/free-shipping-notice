@@ -49,8 +49,6 @@ class Settings {
 					'desc_tip' => __( 'The Free shipping amount', 'free-shipping-notice' ),
 					'default'  => 0,
 					'id'       => 'wc_free_shipping_amount',
-					'css'      => 'height:100px;',
-					'css'      => 'width:100px;',
 				),
 				array(
 					'title'    => __( 'Message', 'free-shipping-notice' ),
@@ -58,8 +56,7 @@ class Settings {
 					'desc_tip' => __( 'The text you would like displayed in the notice. Use {amount} and {amount_remaining} as variable placeholders', 'free-shipping-notice' ),
 					'default'  => __( 'Hey! We have free shipping for orders over {amount} spend another {amount_remaining} to get free shipping', 'free-shipping-notice' ),
 					'id'       => 'wc_free_shipping_message',
-					'css'      => 'height:200px;',
-					'css'      => 'min-width:200px;',
+					'css'      => 'height:100px;min-width:200px;',
 				),
 				array(
 					'title'   => __( 'Include Tax', 'free-shipping-notice' ),
@@ -90,6 +87,7 @@ class Settings {
 					'id'      => 'wc_free_shipping_excluded_roles',
 					'type'    => 'multiselect',
 					'options' => $this->get_user_roles(),
+					'css'     => 'height:150px',
 				),
 				'section_end' => array(
 					'type' => 'sectionend',
