@@ -85,6 +85,12 @@ class Settings {
 					'type'    => 'checkbox',
 					'css'     => 'min-width:200px;',
 				),
+				array(
+					'title'   => __( 'Hide for these roles', 'free-shipping-notice' ),
+					'id'      => 'wc_free_shipping_excluded_roles',
+					'type'    => 'multiselect',
+					'options' => $this->get_user_roles(),
+				),
 				'section_end' => array(
 					'type' => 'sectionend',
 					'id'   => 'wc_free_shipping',
@@ -95,6 +101,16 @@ class Settings {
 			return $settings;
 		}
 	}
+
+	protected function get_user_roles() {
+		$roles = new \WP_Roles;
+		return $roles->get_names();
+	}
+
+	public static function get_excluded_roles() {
+		return get_option( 'wc_free_shipping_excluded_roles' );
+	}
+
 	public static function get_freeship_amount() {
 	  return get_option( 'wc_free_shipping_amount' );
 	}
