@@ -1,0 +1,24 @@
+{
+	"browserSyncOptions": {
+		"proxy": "localhost:8080/",
+		"notify": false,
+		"files": ["./css/*.min.css", "./js/*.min.js", "./**/*.php"],
+		"browser" : "default"
+	},
+	"paths": {
+		"js": "./js",
+		"css": "./css",
+		"fonts": "./fonts",
+		"img": "./img",
+		"imgsrc": "./src/img",
+		"sass": "./src/sass",
+		"node": "./node_modules",
+		"composer": "./vendor",
+		"dev": "./src",
+		"dist": "./dist",
+		"distprod": "./dist-product"
+  },
+  "pluginVars" : {
+    "plugin-slug" : "free-shipping-notice-for-wc"
+  }
+}
