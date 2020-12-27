@@ -88,6 +88,8 @@ class Settings {
 					'type'    => 'multiselect',
 					'options' => $this->get_user_roles(),
 					'css'     => 'height:150px',
+					'class'   => 'wc-enhanced-select',
+
 				),
 				'section_end' => array(
 					'type' => 'sectionend',
