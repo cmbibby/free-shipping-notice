@@ -28,7 +28,7 @@ class Notice {
 		if ( $subtotal < $free_ship_amount ) {
 			 $amount_to_spend = $free_ship_amount - $subtotal;
 
-			wc_add_notice( $this->parse_message_vars( $message, $amount_to_spend, $free_ship_amount ) );
+			wc_add_notice( $this->parse_message_vars( $message, $amount_to_spend, $free_ship_amount ), Settings::get_notice_type() );
 		}
 	}
 

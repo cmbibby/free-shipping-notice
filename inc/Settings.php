@@ -83,6 +83,17 @@ class Settings {
 					'css'     => 'min-width:200px;',
 				),
 				array(
+					'title'   => __( 'Notice Type' ),
+					'id'      => 'wc_free_shipping_notice_type',
+					'type'    => 'select',
+					'options' => array(
+						'success' => __( 'Success' ),
+						'error'   => __( 'Error' ),
+						'notice'  => __( 'Notice' ),
+					),
+					'css'     => 'min-width:200px',
+				),
+				array(
 					'title'   => __( 'Hide for these roles', 'free-shipping-notice' ),
 					'id'      => 'wc_free_shipping_excluded_roles',
 					'type'    => 'multiselect',
@@ -117,6 +128,10 @@ class Settings {
 
 	public static function get_message() {
 	  return get_option( 'wc_free_shipping_message' );
+	}
+
+	public static function get_notice_type() {
+		return get_option( 'wc_free_shipping_notice_type' );
 	}
 
 	public static function display_in_cart() {
