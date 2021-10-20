@@ -7,10 +7,10 @@
  * Author URI:      https://chrisbibby.com.au
  * Text Domain:     free-shipping-notice
  * Domain Path:     /languages
- * Version:         1.0.0
+ * Version:         1.1.0
  * GitHub Plugin URI: cmbibby/free-shipping-notice
  * WC requires at least: 3.5.0
- * WC tested up to: 4.7.0
+ * WC tested up to: 5.8.0
  *
  * @package         Free_Shipping_Notice
  */
